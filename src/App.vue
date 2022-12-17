@@ -1,29 +1,52 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <div id="app">
+        <!-- <nav class="navigation">
+            <router-link to="/">Home</router-link>
+            <router-link to="/login">Login</router-link>
+        </nav> -->
+
+        <main class="main">
+            <router-view />
+        </main>
+    </div>
 </template>
 
+<script lang="ts">
+    import { mapActions } from 'vuex';
+
+    export default {
+        name: 'App',
+        components: {
+            
+        },
+        created() {
+            // Call Store function
+        },
+        methods: {
+            ...mapActions([
+                // Import Store function
+            ]),
+        },
+    }
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+    :root {
+        --main-first-color: #41B883;
+        --main-second-color: #35495E;
+
+        --main-red-color: #FB565E;
+        --main-blue-color: #348AF4;
+        --main-grey-color: #333;
+        --main-white-color: #FFF;
+        --main-green-color: #499F68;
+        --main-yellow-color: #FFCF60;
+
+        --main-dark-blue-color: #2c3e50;
+        --main-body-color: #E2FAE9;
+    }
 </style>
